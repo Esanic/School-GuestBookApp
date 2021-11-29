@@ -1,13 +1,42 @@
-var http = require("http");
-var formidable = require("formidable");
-var fs = require("fs");
+const fs = require("fs");
+const express = require ("express");
+const bodyParser = require("body-parser");
+const path = require("path");
+const app = express();
+const port = 5500;
+const file = "./posts.json";
 
-http.createServer(function(req, res){
-    res.writeHead(200, {"Content-Type":"text/html"});
-    res.write('<form action="fileupload" method="post" enctype="application/x-www-form-urlencoded">');
-    res.write('<input type="text" name="namn" id="namn">');
-    res.write('<input type="text" name="email" id="email">');
-    res.write('<input type="text" name="comment" id="comment">')
+app.use(bodyParser.urlencoded({ extended: true }));
 
-}).listen(8080);
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, '/index.html'));
+});
+
+app.post('/test', function(req, res) {
+    const usrname = req.body.name;
+    const usremail = req.body.email;
+    const usrcomment = req.body.comment;
+
+    let obj = { name: usrname, email: usremail, comment: usrcomment };
+
+    let data = fs.readFileSync("posts.json");
+    let myobject = JSON.parse(data);
+
+    myobject.posts.push(obj);
+
+    let newData = JSON.stringify(myobject);
+    fs.writeFile(file, newData, err => {
+        if (err) throw err;
+    })
+
+    res.write("Inlägg skickat!");
+    // fs.appendFile(file, obj, (err)=> {
+    //     if(err) throw err;
+    // })
+});
+
+app.listen(port, () => {
+    console.log(`Server running at localhost:${port}`);
+});
+
 

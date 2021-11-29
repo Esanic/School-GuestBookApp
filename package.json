@@ -1,5 +1,27 @@
 {
   "dependencies": {
-    "formidable": "^2.0.1"
-  }
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.13.0",
+    "formidable": "^2.0.1",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7"
+  },
+  "name": "guestbook",
+  "version": "1.0.0",
+  "description": "gästbok",
+  "main": "guestbook.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Esanic/guestbookInNodeJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Esanic/guestbookInNodeJS/issues"
+  },
+  "homepage": "https://github.com/Esanic/guestbookInNodeJS#readme"
 }

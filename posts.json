@@ -1,0 +1,14 @@
+{"posts":
+    [
+        {
+        "name":"Christopher",
+        "email":"tofflund@hotmail.com",
+        "comment":"Hej på dig!"
+        },
+        {
+        "name":"Christopher",
+        "email":"christopher@zylion.se",
+        "comment":"Du är bäst!"
+        }
+    ]
+}
