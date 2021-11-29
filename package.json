@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/Esanic/guestbookInNodeJS/issues"
   },
-  "homepage": "https://github.com/Esanic/guestbookInNodeJS#readme"
+  "homepage": "https://github.com/Esanic/guestbookInNodeJS#readme",
+  "devDependencies": {
+    "prettier": "2.5.0"
+  }
 }

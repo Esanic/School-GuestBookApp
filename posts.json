@@ -1,14 +1,10 @@
-{"posts":
-    [
-        {
-        "name":"Christopher",
-        "email":"tofflund@hotmail.com",
-        "comment":"Hej på dig!"
-        },
-        {
-        "name":"Christopher",
-        "email":"christopher@zylion.se",
-        "comment":"Du är bäst!"
-        }
-    ]
+{
+  "posts": [
+    {
+      "name": "Christopher Reineborn",
+      "email": "reineborn@hotmail.com",
+      "comment": "Tjohej!",
+      "time": "2021-11-29T21:57:31.831Z"
+    }
+  ]
 }

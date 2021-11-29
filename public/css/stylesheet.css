@@ -1,0 +1,25 @@
+#form {
+  position: relative;
+  margin: auto;
+  width: 20rem;
+  display: flex;
+}
+
+#formname,
+#formemail,
+#formcomment {
+  width: 10rem;
+}
+
+#inputs {
+  margin: 0 1rem;
+}
+
+.label {
+  line-height: 1.4rem;
+}
+
+#skickaKnapp {
+  width: 4rem;
+  height: 4rem;
+}

@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head> </head>
+  <head>
+    <title>Toffes Gästbok</title>
+    <link type="text/css" rel="stylesheet" href="css/stylesheet.css" />
+  </head>
   <body>
-    <form action="/test" method="POST">
-      Namn:<input type="text" name="name" /><br />
-      E-post:<input type="text" name="email" /><br />
-      Kommentar:<input type="text" name="comment" /><br />
-      <input type="submit" value="Submit" />
+    <form action="/test" method="POST" id="form">
+      <div id="labels">
+        <label class="label">Namn: </label><br />
+        <label class="label">E-post: </label><br />
+        <label class="label">Inlägg: </label><br />
+      </div>
+      <div id="inputs">
+        <input
+          type="text"
+          name="name"
+          id="formname"
+          placeholder="Ditt namn"
+        /><br />
+        <input
+          type="text"
+          name="email"
+          id="formemail"
+          placeholder="Din e-post"
+        /><br />
+        <input
+          type="text"
+          name="comment"
+          id="formcomment"
+          placeholder="Ditt inlägg"
+        /><br />
+      </div>
+
+      <input type="submit" value="Skicka" id="skickaKnapp" />
     </form>
   </body>
 </html>

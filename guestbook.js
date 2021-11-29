@@ -7,32 +7,36 @@ const port = 5500;
 const file = "./posts.json";
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (req, res) {
+app.get('/', async function (req, res) {
+    
     res.sendFile(path.join(__dirname, '/index.html'));
+    
+    let readData = fs.readFileSync(file);
+    let parsedReadData = JSON.parse(readData);
+
 });
 
-app.post('/test', function(req, res) {
+app.post('/test', async function(req, res) {
     const usrname = req.body.name;
     const usremail = req.body.email;
     const usrcomment = req.body.comment;
+    const time = new Date();
 
-    let obj = { name: usrname, email: usremail, comment: usrcomment };
+    let jsonDataIn = { name: usrname, email: usremail, comment: usrcomment, time: time };
 
-    let data = fs.readFileSync("posts.json");
-    let myobject = JSON.parse(data);
+    let readData = fs.readFileSync(file);
+    let parsedReadData = JSON.parse(readData);
 
-    myobject.posts.push(obj);
+    parsedReadData.posts.push(jsonDataIn);
 
-    let newData = JSON.stringify(myobject);
+    let newData = JSON.stringify(parsedReadData);
     fs.writeFile(file, newData, err => {
         if (err) throw err;
     })
 
-    res.write("Inlägg skickat!");
-    // fs.appendFile(file, obj, (err)=> {
-    //     if(err) throw err;
-    // })
+    res.send("Inlägg skickat!");
 });
 
 app.listen(port, () => {
