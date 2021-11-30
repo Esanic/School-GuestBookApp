@@ -9,12 +9,23 @@ const file = "./posts.json";
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
+function displayData(data) {
+        let postContainer = document.getElementById("postsContainer");
+        for (let i = 0; i < data.length; i++){
+            let div = document.createElement("div");
+            div.innerHTML= "Namn" + data[i].name + "<br>" + "E-post" + data[i].email + "<br>" + "Inlägg" + data[i].comment + "<br>";
+            postContainer.appendChild("div");
+        }
+    }
+
 app.get('/', async function (req, res) {
     
     res.sendFile(path.join(__dirname, '/index.html'));
     
     let readData = fs.readFileSync(file);
     let parsedReadData = JSON.parse(readData);
+
+    displayData(parsedReadData);
 
 });
 
