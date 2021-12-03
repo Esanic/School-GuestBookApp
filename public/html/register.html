@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <title>Toffes Gästbok</title>
+    <link type="text/css" rel="stylesheet" href="../css/stylesheet.css" />
+  </head>
+  <body>
+    <form action="/registered" method="POST" id="registerForm">
+      <div id="labels">
+        <label class="label">Användarnamn: </label><br />
+        <label class="label">Lösenord: </label><br />
+      </div>
+      <div id="inputs">
+        <input
+          type="text"
+          name="regUsername"
+          id="usrName"
+          placeholder="Ditt användnamn"
+        /><br />
+        <input
+          type="password"
+          name="regPassword"
+          id="usrPassword"
+          placeholder="Din lösenord"
+        /><br />
+      </div>
+      <input type="submit" value="Registrera" id="registerKnapp" />
+    </form>
+  </body>
+</html>

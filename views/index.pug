@@ -1,0 +1,22 @@
+html
+  head
+    title="Toffes Gästbok"
+    link(rel="stylesheet" href="css/stylesheet.css")
+    script(src="javascript/script.js")
+  body(onload="renderJsonData();")
+    form(action="/sent" method="POST" id="form")
+        div(id="labels")
+            label(class="label") Namn:
+            br
+            label(class="label") E-post:
+            br
+            label(class="label") Inlägg:
+        div(id="inputs")
+            input(type="text" name="name" id="formname" placeholder="Ditt namn")
+            br
+            input(type="text" name="email" id="formemail" placeholder="Din e-post")
+            br
+            textarea(rows="3" name="comment" id="formcomment" placeholder="Ditt inlägg")
+            br
+        input(type="submit" value="Skicka" id="skickaKnapp")
+    div(id="postsContainer")

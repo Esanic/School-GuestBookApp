@@ -2,10 +2,11 @@
 <html lang="sv">
   <head>
     <title>Toffes Gästbok</title>
-    <link type="text/css" rel="stylesheet" href="css/stylesheet.css" />
+    <link type="text/css" rel="stylesheet" href="../css/stylesheet.css" />
+    <script src="../javascript/script.js"></script>
   </head>
-  <body>
-    <form action="/test" method="POST" id="form">
+  <body onload="renderJsonData();">
+    <form action="/sent" method="POST" id="form">
       <div id="labels">
         <label class="label">Namn: </label><br />
         <label class="label">E-post: </label><br />
