@@ -32,7 +32,6 @@ app.post('/loggedin', async function(req, res) {
     if (userAccount) {
         let userPassword = userAccount.password;
         if (req.body.password === userPassword){
-            console.log("1");
             res.sendFile(path.join(__dirname, '/index.html'));
         }
         else {

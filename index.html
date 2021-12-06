@@ -5,7 +5,7 @@
     <link type="text/css" rel="stylesheet" href="../css/stylesheet.css" />
     <script src="../javascript/script.js"></script>
   </head>
-  <body onload="renderJsonData();">
+  <body onload="index();">
     <form action="/sent" method="POST" id="form">
       <div id="labels">
         <label class="label">Namn: </label><br />
@@ -17,7 +17,7 @@
           type="text"
           name="name"
           id="formname"
-          placeholder="Ditt namn"
+          placeholder="Ditt för och efternamn"
         /><br />
         <input
           type="text"
@@ -25,12 +25,14 @@
           id="formemail"
           placeholder="Din e-post"
         /><br />
-        <input
-          type="text"
+        <textarea
           name="comment"
           id="formcomment"
           placeholder="Ditt inlägg"
-        /><br />
+          cols="50"
+          rows="3"
+        ></textarea
+        ><br />
       </div>
       <input type="submit" value="Skicka" id="skickaKnapp" />
     </form>

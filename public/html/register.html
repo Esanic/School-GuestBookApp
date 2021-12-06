@@ -3,8 +3,9 @@
   <head>
     <title>Toffes Gästbok</title>
     <link type="text/css" rel="stylesheet" href="../css/stylesheet.css" />
+    <script src="../javascript/script.js"></script>
   </head>
-  <body>
+  <body onload="register();">
     <form action="/registered" method="POST" id="registerForm">
       <div id="labels">
         <label class="label">Användarnamn: </label><br />
@@ -21,10 +22,15 @@
           type="password"
           name="regPassword"
           id="usrPassword"
-          placeholder="Din lösenord"
+          placeholder="Lösenord"
         /><br />
       </div>
-      <input type="submit" value="Registrera" id="registerKnapp" />
+      <input
+        type="submit"
+        value="Registrera"
+        id="registerKnapp"
+        onclick="onClick();"
+      />
     </form>
   </body>
 </html>

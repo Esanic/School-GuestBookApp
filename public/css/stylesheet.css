@@ -11,6 +11,8 @@
 #formemail,
 #formcomment {
   width: 20rem;
+  background-color: white;
+  font: 12px Arial, sans-serif;
 }
 
 #inputs {
