@@ -1,9 +1,13 @@
+body {
+  font: 12px Arial;
+}
+
 #form,
 #loginForm,
 #registerForm {
   position: relative;
   margin: auto;
-  width: 20%;
+  width: fit-content;
   display: flex;
 }
 
@@ -32,7 +36,7 @@
   height: 2.8rem;
 }
 #register {
-  width: 9.5%;
+  width: fit-content;
   margin: 1rem auto auto;
 }
 
@@ -58,4 +62,11 @@
 }
 .infoContainer {
   flex-basis: 40%;
+}
+
+.password {
+  width: fit-content;
+  padding: 2rem 0 0 0;
+  margin: auto;
+  font-size: 11px;
 }
