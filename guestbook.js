@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const pug = require("pug");
 const app = express();
-const port = 5500;
+const port = 3000;
 const file = "./public/json/posts.json";
 const credentials = "./credentials/credentials.json";
 
@@ -62,12 +62,12 @@ app.post('/registered', async function(req, res) {
         let newData = JSON.stringify(parsedReadData);
         fs.writeFile(credentials, newData, err => {
         if (err) throw err;
-            res.send("<html><body><p>Du är nu registrerad!</p><p>Du skickas nu till inloggningssidan</p><script>var timer = setTimeout(function() {window.location='http://localhost:5500'}, 3000);</script></body></html>");
+            res.send("<html><body><p>Du är nu registrerad!</p><p>Du skickas nu till inloggningssidan</p><script>var timer = setTimeout(function() {window.location='http://localhost:3000'}, 3000);</script></body></html>");
         })
         }
         else
         {
-            res.send("<html><body><p>Detta användarnamnet fanns redan!</p><p>Du skickas nu till registreringssidan</p><script>var timer = setTimeout(function() {window.location='http://localhost:5500/html/register.html'}, 3000);</script></body></html>");
+            res.send("<html><body><p>Detta användarnamnet fanns redan!</p><p>Du skickas nu till registreringssidan</p><script>var timer = setTimeout(function() {window.location='http://localhost:3000/html/register.html'}, 3000);</script></body></html>");
         }
     })
 
